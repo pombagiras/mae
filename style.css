@@ -817,26 +817,45 @@ footer.main-footer .footer-signature {
         order: -1;
         max-width: 400px;
         margin: 0 auto;
-        height: 400px;
+        height: 350px;
+    }
+
+    .about-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
     }
 
     .hero h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2rem, 10vw, 3.2rem) !important;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-height: 1.2;
+    }
+
+    .hero p.subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
 
     .floating-social {
-        bottom: 30px;
+        bottom: 20px;
         top: auto;
         right: 50%;
         transform: translateX(50%);
         flex-direction: row;
         gap: 10px;
+        background: rgba(10, 1, 8, 0.9);
+        padding: 10px 20px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
 
     .social-icon,
     .back-to-top {
         width: 45px;
         height: 45px;
+        border-radius: 50%;
     }
 
     .edu-nav {
@@ -860,12 +879,52 @@ footer.main-footer .footer-signature {
         font-size: 2.8rem;
     }
 
+    /* Otimizações do Carrossel para telas Touch */
+    .carousel-item img {
+        filter: grayscale(0%);
+    }
+
+    .carousel-item:hover {
+        transform: none !important;
+        box-shadow: 0 10px 25px rgba(217, 4, 41, 0.4) !important;
+        z-index: 1 !important;
+        border-color: var(--secondary) !important;
+    }
+
+    .carousel-item:hover img {
+        transform: none !important;
+    }
+
     .modal-content {
-        padding: 30px;
+        padding: 30px 20px;
+        border-radius: 30px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 2.2rem !important;
     }
 
     .modal-specs-grid {
         grid-template-columns: 1fr;
         padding: 15px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .newsletter-section h2.newsletter-title {
+        font-size: 2.8rem;
     }
 }
